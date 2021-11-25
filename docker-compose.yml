@@ -5,24 +5,16 @@ services:
     container_name: rabbitmq
     image: rabbitmq:management
     environment:
-      RABBITMQ_ERLANG_COOKIE: ${RABBITMQ_ERLANG_COOKIE}
-      RABBITMQ_DEFAULT_USER: "admin"
-      RABBITMQ_DEFAULT_PASS: "admin"
+      RABBITMQ_DEFAULT_USER: "guest"
+      RABBITMQ_DEFAULT_PASS: "guest"
     ports:
       - "5672:5672"
       - "15672:15672"
     restart: always
-    networks:
-      - test-network
 
   redis:
     container_name: redis
-    image: redis:5
+    image: redis
     ports:
       - "6379:6379"
     restart: always
-    networks:
-      - test-network
-
-networks:
-  test-network:
