@@ -22,3 +22,4 @@ docker-compose start
 ```
 docker-compose stop
 ```
+Необходимо обновить RabbitMQ.DI до последней версии
